@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment
 
 abstract class BaseFragment<P : BasePresenter<BaseView>> : BaseView , Fragment() {
     protected lateinit var presenter: P
-    private lateinit var mContext: Context
 
     protected abstract fun instantiatePresenter(): P
 
@@ -15,11 +14,7 @@ abstract class BaseFragment<P : BasePresenter<BaseView>> : BaseView , Fragment()
         presenter = instantiatePresenter()
     }
 
-    protected fun setContext(context: Context) {
-        mContext = context
-    }
-
     override fun getContext(): Context {
-        return this.mContext
+        return this.activity as Context
     }
 }

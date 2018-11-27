@@ -1,9 +1,7 @@
 package net.gahfy.feedme.ui.post
 
-import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -18,11 +16,10 @@ import net.gahfy.feedme.model.Post
 class PostFragment : BaseFragment<PostPresenter>(), PostView  {
 
     companion object {
-        fun newInstance(context : Context) : PostFragment {
+        fun newInstance() : PostFragment {
             val args = Bundle()
             val fragment = PostFragment()
             fragment.arguments = args
-            fragment.context = context
             return fragment
         }
     }

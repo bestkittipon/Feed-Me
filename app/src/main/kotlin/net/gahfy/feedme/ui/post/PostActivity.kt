@@ -33,12 +33,12 @@ class PostActivity : BaseActivity<BasePresenter<BaseView>>() {
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.content_container_post, PostFragment.newInstance(getContext()))
+                replace(R.id.content_container_post, PostFragment.newInstance())
                 addToBackStack(null)
             }.commit()
 
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.content_container_photo, PhotoFragment.newInstance(getContext()))
+                replace(R.id.content_container_photo, PhotoFragment.newInstance())
                 addToBackStack(null)
             }.commit()
         }

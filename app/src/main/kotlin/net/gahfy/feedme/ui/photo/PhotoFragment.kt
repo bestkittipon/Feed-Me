@@ -1,9 +1,7 @@
 package net.gahfy.feedme.ui.photo
 
-import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.widget.DividerItemDecoration
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -13,18 +11,15 @@ import android.widget.Toast
 import net.gahfy.feedme.R
 import net.gahfy.feedme.base.BaseFragment
 import net.gahfy.feedme.databinding.FragmentPhotoBinding
-import net.gahfy.feedme.databinding.FragmentPostBinding
 import net.gahfy.feedme.model.Photo
-import net.gahfy.feedme.model.Post
 
 class PhotoFragment : BaseFragment<PhotoPresenter>(), PhotoView  {
 
     companion object {
-        fun newInstance(context : Context) : PhotoFragment {
+        fun newInstance() : PhotoFragment {
             val args = Bundle()
             val fragment = PhotoFragment()
             fragment.arguments = args
-            fragment.context = context
             return fragment
         }
     }
