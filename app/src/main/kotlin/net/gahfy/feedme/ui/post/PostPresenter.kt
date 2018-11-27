@@ -1,7 +1,6 @@
 package net.gahfy.feedme.ui.post
 
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import net.gahfy.feedme.R
 import net.gahfy.feedme.base.BasePresenter
@@ -17,8 +16,6 @@ import javax.inject.Inject
 class PostPresenter(postView: PostView) : BasePresenter<PostView>(postView) {
     @Inject
     lateinit var postApi: PostApi
-
-    private var subscription: Disposable? = null
 
     override fun onViewCreated() {
         loadPosts()

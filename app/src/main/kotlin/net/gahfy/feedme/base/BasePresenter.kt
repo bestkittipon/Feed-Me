@@ -1,9 +1,11 @@
 package net.gahfy.feedme.base
 
+import io.reactivex.disposables.Disposable
 import net.gahfy.feedme.injection.component.DaggerPresenterInjector
 import net.gahfy.feedme.injection.component.PresenterInjector
 import net.gahfy.feedme.injection.module.ContextModule
 import net.gahfy.feedme.injection.module.NetworkModule
+import net.gahfy.feedme.ui.photo.PhotoPresenter
 import net.gahfy.feedme.ui.post.PostPresenter
 
 /**
@@ -21,6 +23,8 @@ abstract class BasePresenter<out V : BaseView>(protected val view: V) {
             .contextModule(ContextModule)
             .networkModule(NetworkModule)
             .build()
+
+    protected var subscription: Disposable? = null
 
     init {
         inject()
@@ -42,6 +46,7 @@ abstract class BasePresenter<out V : BaseView>(protected val view: V) {
     private fun inject() {
         when (this) {
             is PostPresenter -> injector.inject(this)
+            is PhotoPresenter -> injector.inject(this)
         }
     }
 }

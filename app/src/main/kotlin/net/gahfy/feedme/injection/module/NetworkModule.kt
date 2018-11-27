@@ -4,6 +4,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.Reusable
 import io.reactivex.schedulers.Schedulers
+import net.gahfy.feedme.network.PhotoApi
 import net.gahfy.feedme.network.PostApi
 import net.gahfy.feedme.utils.BASE_URL
 import retrofit2.Retrofit
@@ -27,6 +28,13 @@ object NetworkModule {
     @JvmStatic
     internal fun providePostApi(retrofit: Retrofit): PostApi {
         return retrofit.create(PostApi::class.java)
+    }
+
+    @Provides
+    @Reusable
+    @JvmStatic
+    internal fun providePhotoApi(retrofit: Retrofit): PhotoApi {
+        return retrofit.create(PhotoApi::class.java)
     }
 
     /**
