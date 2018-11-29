@@ -2,11 +2,7 @@ package net.gahfy.feedme.base
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
-import javax.inject.Inject
 
 /**
  * Activity all Activity classes of rosso must extend. It provides required methods and presenter
